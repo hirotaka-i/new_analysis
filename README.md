@@ -28,15 +28,18 @@ priv: Also not tracked. Congig files etc.
 
 
 # 2. Modification
-1. Change the folder name as appropriate
-2. Initialize the folder
-3. Connect to the appropriate github repository
-3. Modify files/folder structures as needed
+1. Change the folder name as appropriate.
+2. Initialize the folder.
+3. Connect to the appropriate GitHub repository.
+3. Modify files/folder structures as needed.
 
 ```
 git init
-git remote add origin <remote git repository>
-
+git remote add origin <your remote GitHub repository>
+# modify folder/data/etc
+git add *
+git commit -m 'first commit'
+git push origin main
 ```
 
 # Set up python environment
