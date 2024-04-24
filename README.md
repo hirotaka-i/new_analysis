@@ -19,21 +19,22 @@ Cloned folders
 In addition, I would add the folders like below
 
 3. data: folder to store the input data (**untracked**)
-4. priv: working files only in private repo (**should not be copied in the public GitHub**)
+4. priv: working files which **should not be copied in the public GitHub**)
 5. temp: temporary files generated from input (**untracked**)
 
 data/temp: These folders are not tracked for 2 reasons - (1) The data can be very big. (2) The data cannot be sharable. If the analysis requires the data in these folders, manual copying is required.
 
-priv: Also not tracked. Congig files etc. 
+priv: Also not tracked. Remove from .gitignore if the repository is private. 
 
 
 # 2. Modification
 1. Change the folder name as appropriate.
 2. Initialize the folder.
 3. Connect to the appropriate GitHub repository.
-3. Modify files/folder structures as needed.
+4. Modify files/folder structures as needed.
 
 ```
+rm -rf .git # remove the git history
 git init
 git remote add origin <your remote GitHub repository>
 # modify folder/data/etc
@@ -52,4 +53,5 @@ pip install <package name>
 pip freeze > requirements.txt # update the file
 ```
 
-
+# Next step
+Once complete the set-up , delete the above and start your own README.md
