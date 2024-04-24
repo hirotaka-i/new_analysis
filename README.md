@@ -16,7 +16,7 @@ Cloned folders
 1. code: code snipets
 2. report: summary and reports
 
-In addition, the following untracked files
+In addition, the following untracked folders
 
 3. data: folder to store the input data (**untracked**)
 4. priv: working files which **should not be copied in the public GitHub**
