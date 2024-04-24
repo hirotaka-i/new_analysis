@@ -16,10 +16,10 @@ Cloned folders
 1. code: code snipets
 2. report: summary and reports
 
-In addition, I would add the folders like below
+In addition, the following untracked files
 
 3. data: folder to store the input data (**untracked**)
-4. priv: working files which **should not be copied in the public GitHub**)
+4. priv: working files which **should not be copied in the public GitHub**
 5. temp: temporary files generated from input (**untracked**)
 
 data/temp: These folders are not tracked for 2 reasons - (1) The data can be very big. (2) The data cannot be sharable. If the analysis requires the data in these folders, manual copying is required.
@@ -32,6 +32,7 @@ priv: Also not tracked. Remove from .gitignore if the repository is private.
 2. Initialize the folder.
 3. Connect to the appropriate GitHub repository.
 4. Modify files/folder structures as needed.
+5. push it to the GitHub
 
 ```
 rm -rf .git # remove the git history
@@ -54,4 +55,4 @@ pip freeze > requirements.txt # update the file
 ```
 
 # Next step
-Once complete the set-up , delete the above and start your own README.md
+Once complete the set-up, delete the above and start your own README.md
