@@ -1,5 +1,5 @@
 # Introduction
-This repository may be useful to start a new analytical project
+This repository may be useful to start a new analytical project. 
 
 # 1. Clone the folder
 
