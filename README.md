@@ -10,17 +10,33 @@ This repository provides a structured template for starting a new analytical pro
 To start a new repository based on this template:
 
 ```bash
-git clone https://github.com/hirotaka-i/new_analysis.git # Clone this template repo
-rm -rf .git # Remove the existing Git history
-git init # Initialize a new Git repository
-git remote add origin <your remote repository> # Connect to your new remote repository
+# Step 1: Clone this template repository
+git clone https://github.com/hirotaka-i/new_analysis.git 
+
+# Step 2: Rename the cloned directory to your project name
+mv new_analysis <my_project> # Replace <my_project> with your own project name
+
+# Step 3: Change into your new project directory
+cd <my_project>
+
+# Step 4: Remove the existing Git history
+rm -rf .git 
+
+# Step 5: Initialize a new Git repository
+git init 
+
+# Step 6: Add a new remote pointing to your new GitHub repository
+git remote add origin <your_remote_repository> # Replace <your_remote_repository> with your actual GitHub repo URL
+
+# Step 7: Stage and commit your files
 git add .
-git commit -m 'first commit'
+git commit -m 'Initial commit'
+
+# Step 8: Set the branch to main and push to GitHub
 git branch -M main
 git push -u origin main
 ```
-
-Now, modify the folder name and update the README.md file to personalize it for your project.
+If you have the GitHub CLI (gh) installed, you can create a new GitHub repository directly from the terminal: `gh repo create my-new-repo --public --source=. --remote=origin`
 
 ## Environment Setup
 
