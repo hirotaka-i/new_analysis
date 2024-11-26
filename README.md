@@ -130,7 +130,7 @@ python -m pip install -r requirements.txt
 
 #### Additional notes:
 
-#### Install New Packages and Update Dependencies
+##### Install New Packages and Update Dependencies
 
 To add new packages to your environment and update the `requirements.txt` file:
 
@@ -155,6 +155,10 @@ python3.9 -m venv .venv
 ```
 
 This ensures the environment is created using Python 3.9 (or another desired version).
+
+##### GitHub CLI (Optional)
+[GitHub CLI](https://cli.github.com/manual/gh_repo_create) can create a new GitHub repository directly from the terminal: 
+e.g. `gh repo create my-new-repo --public --source=. --remote=origin`
 
 ---
 
