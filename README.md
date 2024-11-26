@@ -5,53 +5,158 @@ This repository provides a structured template for starting a new analytical pro
 1. **Reproducibility**: Ensure that analyses are easily reproducible with a clear folder structure and environmental setup guidelines.
 2. **Security**: Prevent sensitive information, such as data, API keys, and passwords, from being uploaded to GitHub.
 
+The following sections require git to be installed on your machine. If you have not set up the git, please follow the instructions [here](https://docs.github.com/en/get-started/quickstart/set-up-git)
+
 ## Install and Set Up the GitHub Connection
 
-To start a new repository based on this template:
+To create a new repository based on this template, follow the steps below.
+
+#### Notes:
+1. Replace `YOUR_PROJECT_NAME` with the desired name of your project.
+2. Replace `YOUR_GITHUB_REPO_URL` with the URL of your newly created GitHub repository.
+
+
+### Step 1: Clone the Template Repository
+
+The following commands will clone the template repository, rename it to your project name, and remove the existing Git history.
+
+#### For macOS/Linux (Bash):
+```bash
+# Clone the template repository
+git clone https://github.com/hirotaka-i/new_analysis.git 
+
+# Rename the folder. Substitute YOUR_PROJECT_NAME with your desired project name
+mv new_analysis YOUR_PROJECT_NAME 
+
+# Change directory to the new project folder
+cd YOUR_PROJECT_NAME
+
+# Remove the existing Git history
+rm -rf .git
+```
+
+#### For Windows PowerShell:
+```powershell
+# Clone the template repository
+git clone https://github.com/hirotaka-i/new_analysis.git 
+
+# Rename the folder. Substitute YOUR_PROJECT_NAME with your desired project name
+Rename-Item -Path "new_analysis" -NewName "YOUR_PROJECT_NAME" 
+
+# Change directory to the new project folder
+Set-Location "YOUR_PROJECT_NAME"
+
+# Remove the existing Git history
+Remove-Item -Recurse -Force ".git"
+```
+
+---
+
+### Step 2: Initialize and Set Up the New Repository
+
+Once the template is set up, create a new repository on [GitHub](https://github.com) and copy the repository URL. Use the commands below to initialize the repository, link it to your new remote repository, and push the initial commit.
 
 ```bash
-git clone https://github.com/hirotaka-i/new_analysis.git # Clone this template repo
-rm -rf .git # Remove the existing Git history
-git init # Initialize a new Git repository
-git remote add origin <your remote repository> # Connect to your new remote repository
+# Initialize a new Git repository
+git init 
+
+# Connect to your new remote repository (replace YOUR_GITHUB_REPO_URL with your repository URL)
+git remote add origin YOUR_GITHUB_REPO_URL 
+
+# Stage all files for the initial commit
 git add .
-git commit -m 'first commit'
+
+# Commit the changes
+git commit -m "Initial commit"
+
+# Rename the default branch to 'main'
 git branch -M main
+
+# Push the changes to the remote repository
 git push -u origin main
 ```
 
-Now, modify the folder name and update the README.md file to personalize it for your project.
+---
+### Note
+If this is the first time to push git to the remote repository, you will be asked to provide the username and password. 
+```
+git config --global user.name "Your Name"
+git config --global user.email "Your Email"
+```
+---
+
+
+
 
 ## Environment Setup
 
-For Python projects, the recommended way to manage the environment is to use Python’s built-in `venv` module. The following steps guide you through setting up your environment based on specified parameters like Python version and environment management tool:
+For Python projects, the recommended way to manage the environment is by using Python’s built-in `venv` module. Follow the steps below to set up your environment, manage dependencies, and ensure consistency across development environments.
 
+### Step 1: Create a Virtual Environment
+
+Run the following commands inside your project folder:
+
+#### macOS/Linux:
 ```bash
-# Inside the project folder
-python3 -m venv .venv 
-source .venv/bin/activate # For macOS/Linux
-python -m pip install --upgrade pip
-python -m pip install -r requirements.txt # please modify requirements.txt to include the necessary packages
+# Create a virtual environment in the .venv directory
+python3 -m venv .venv # or "python -m venv .venv"
+
+# Activate the virtual environment
+source .venv/bin/activate 
 ```
 
-To install new packages and update your environment:
+#### Windows (PowerShell):
+```powershell
+# Create a virtual environment in the .venv directory
+python -m venv .venv 
+
+# Activate the virtual environment
+.venv\Scripts\Activate 
+```
+
+#### Package Installation:
+```
+# Upgrade pip
+python -m pip install --upgrade pip 
+
+# Install dependencies listed in requirements.txt
+python -m pip install -r requirements.txt 
+```
+
+> **Note**: `requirements.txt` is to to document dependencies for the project. This allows others to replicate your environment easily. Ensure `requirements.txt` includes all necessary packages for your project. Modify it as needed. (see the following section to update it)
+---
+
+
+
+#### Additional notes:
+
+#### Install New Packages and Update Dependencies
+
+To add new packages to your environment and update the `requirements.txt` file:
 
 ```bash
-pip install <package_name>
+pip install <package_name>   # Install a new package
 pip freeze > requirements.txt # Update dependencies in requirements.txt
 ```
 
-To deactivate the virtual environment:
+##### Deactivate the Virtual Environment:
+When you're done working, deactivate the virtual environment with:
 
 ```bash
 deactivate
 ```
 
-The installed packages are listed in the `requirements.txt` file, which simplifies dependency management. If you have `pyenv`, you can specify different Python versions for the virtual environment:
+##### Specify Python Version with `pyenv` (Optional)
+
+If you use `pyenv` to manage Python versions, you can specify a different Python version when creating the virtual environment. For example:
 
 ```bash
-python3.9 -m venv .venv
+python3.9 -m venv .venv 
 ```
+
+This ensures the environment is created using Python 3.9 (or another desired version).
+
+---
 
 ## Folder Structure
 
