@@ -1,6 +1,6 @@
 # Introduction
 
-This repository provides a structured template for starting a new analytical project. It is designed with the following priorities in mind:
+This repository provides a structured template for starting a new (one-person) analytical project. It is designed with the following priorities in mind:
 
 1. **Reproducibility**: Ensure that analyses are easily reproducible with a clear folder structure and environmental setup guidelines.
 2. **Security**: Prevent sensitive information, such as data, API keys, and passwords, from being uploaded to GitHub.
