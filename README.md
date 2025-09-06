@@ -151,7 +151,7 @@ deactivate
 If you use `pyenv` to manage Python versions, you can specify a different Python version when creating the virtual environment. For example:
 
 ```bash
-python3.9 -m venv .venv 
+python3.12 -m venv .venv312
 ```
 
 This ensures the environment is created using Python 3.9 (or another desired version).
