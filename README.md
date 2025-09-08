@@ -148,13 +148,21 @@ deactivate
 
 ##### Specify Python Version with `pyenv` (Optional)
 
-If you use `pyenv` to manage Python versions, you can specify a different Python version when creating the virtual environment. For example:
+By default, a virtual environment uses the Python version available when it is created.  
+If you are using `pyenv`, you can set a specific Python version for your project as follows:
 
 ```bash
-python3.12 -m venv .venv312
+# Choose the desired Python version managed by pyenv
+pyenv install 3.12.6        # only if not already installed
+pyenv local 3.12.6          # creates a .python-version file
+
+# Then create a virtual environment with that version
+python -m venv .venv
 ```
 
-This ensures the environment is created using Python 3.9 (or another desired version).
+This way:  
+- Your virtual environment (`.venv`) will always use that Python version.  
+- `.python-version` is created automatically by `pyenv local`.  
 
 ##### GitHub CLI (Optional)
 [GitHub CLI](https://cli.github.com/manual/gh_repo_create) can create a new GitHub repository directly from the terminal: 
